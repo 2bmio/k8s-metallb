@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.66.10-192.168.66.13
+---
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   namespace: metallb-system
+#   name: config
+# data:
+#   config: |
+#     peers:
+#     - my-asn: 64522
+#       peer-asn: 64512
+#       peer-address: 192.168.66.1
+#       peer-port: 179
+#       router-id: 192.168.66.1
+#     address-pools:
+#     - name: traefik-reserved-ips
+#       protocol: bgp
+#       avoid-buggy-ips: true
+#       addresses:
+#       - 192.168.66.10-192.168.66.15
+##########################################################################
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   namespace: metallb-system
+#   name: config
+# data:
+#   config: |
+#     address-pools:
+#     - name: traefik-reserved-ips
+#       protocol: layer2
+#       addresses:
+#       - 192.168.66.10-192.168.66.15
+#       # - 192.168.X.240/28
+##########################################################################
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   namespace: metallb-system
+#   name: config
+# data:
+#   config: |
+#     peers:
+#       - my-asn: 64500
+#         peer-asn: 64500
+#         peer-address: 192.168.121.10???
+#         address-pools:
+#           - name: traefik-reserved-ips
+#             protocol: bgp
+#             addresses:
+#               - 192.168.143.230-192.168.143.250
