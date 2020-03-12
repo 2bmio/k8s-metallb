@@ -257,7 +257,7 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 10.156.103.90-10.156.103.93
+      - 192.168.66.10-192.168.66.13
 kind: ConfigMap
 metadata:
   labels:
